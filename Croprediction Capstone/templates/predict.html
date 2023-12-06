@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Prediction</title>
+    <style>
+        body 
+        {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://w0.peakpx.com/wallpaper/374/819/HD-wallpaper-green-field-sunset-clouds-countryside-farming-agriculture-landscape.jpg'); /* Make sure to provide the correct path to your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: #333; /* Change text color to improve readability on the background image */
+        }
+        h1 
+        {
+            text-align: center;
+            font-family: 'Times New Roman', serif;
+            color: white; /* Set text color for header */
+        }
+        h2
+        {
+            font-family: 'Times New Roman', serif;
+            color: white; /* Set text color for header */
+        }
+        form 
+        {
+            margin: 0 auto;
+            width: 50%;
+            background-color: rgba(255, 255, 255, 0.7); /* Add a semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px; /* Add rounded corners to the form */
+        }
+        
+        input 
+        {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none; /* Remove input borders */
+        }
+        
+        input[type="submit"] 
+        {
+            background-color: #4CAF50; /* Change the submit button background color */
+            color: #fff; /* Change the text color of the submit button */
+            cursor: pointer;
+        }
+	
+    </style>      
+</head>
+<body>
+    <h1>Crop Prediction</h1> 
+    <form action="/predict" method="post">
+        <input type="number" name="nitrogen" step="0.01" placeholder="Nitrogen">
+        <input type="number" name="phosphorus" step="0.01" placeholder="Phosphorus">
+        <input type="number" name="potassium" step="0.01" placeholder="Potassium">
+        <input type="number" name="temperature" step="0.01" placeholder="Temperature">
+        <input type="number" name="humidity" step="0.01" placeholder="Humidity">
+        <input type="number" name="pH" step="0.01" placeholder="pH">
+        <input type="number" name="rainfall" step="0.01" placeholder="Rainfall">
+        <input type="submit" value="Predict">
+    </form>
+    <h2>Predicted Crop: {{fruit}}</h2>
+    <h2>Suggested Soils: {{soil}} </h2>
+    <h2>Suitable Natural Fertilizers:{{natfer}}</h2>
+    <h2>Predicted Price:{{price}}</h2>
+</body>
+</html>
